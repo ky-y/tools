@@ -1,0 +1,45 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5rem;
+    background: #FFF;
+    box-shadow: 0 0 20px #0003;
+    z-index: 900;
+
+    & > div {
+        display: flex;
+        height: 100%;
+        align-items: center;
+
+        h1 {
+            margin-right: auto;
+            font-size: 1.75rem;
+            line-height: 1.25;
+
+            @media screen and (max-width: 900px) {
+                font-size: 1.5rem;
+            }
+
+            a {
+                display: inline-block;
+
+                span {
+                    display: inline-block;
+                    padding: .125rem .25rem;
+                }
+
+                .kyoya0819 {
+                    background: #FFF;
+                    color: #1BA;
+                }
+
+                .tools {
+                    background: #1BA;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}

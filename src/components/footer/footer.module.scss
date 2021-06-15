@@ -1,0 +1,18 @@
+.footer {
+    text-align: center;
+    padding: 3.5rem 0;
+    color: #888;
+
+    a {
+        color: inherit;
+        transition: color 300ms;
+
+        &:hover {
+            color: darken(#888, 7.5%);
+        }
+
+        &:active {
+            color: darken(#888, 15%);
+        }
+    }
+}
