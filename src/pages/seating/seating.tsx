@@ -48,6 +48,8 @@ const Seating: FC = () => {
     );
 };
 
+export default Seating;
+
 
 const td_size = () => {
 
@@ -83,5 +85,3 @@ const change = () => {
 
     td_size();
 };
-
-export default Seating;
