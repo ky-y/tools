@@ -27,20 +27,10 @@ const Seating: FC = () => {
             };
         });
 
-        const resize = () => {
+        td_size();
 
-            const tds = document.getElementsByClassName(scss.td);
-            const height = tds[0].clientWidth / 4 * 3;
-            Object.keys(tds).forEach((key) => {
-                const td = tds[Number(key)] as HTMLElement;
-                td.style.minHeight = height + "px";
-            });
-        };
-
-        resize();
-
-        window.addEventListener( "resize", resize);
-        return () => window.removeEventListener("resize", resize);
+        window.addEventListener( "resize", td_size);
+        return () => window.removeEventListener("resize", td_size);
     });
 
     return (
@@ -57,6 +47,18 @@ const Seating: FC = () => {
         </div>
     );
 };
+
+
+const td_size = () => {
+
+    const tds = document.getElementsByClassName(scss.td);
+    const height = tds[0].clientWidth / 4 * 3;
+    Object.keys(tds).forEach((key) => {
+        const td = tds[Number(key)] as HTMLElement;
+        td.style.minHeight = height + "px";
+    });
+};
+
 
 const change = () => {
     const tds = document.getElementsByClassName(scss.td);
@@ -78,6 +80,8 @@ const change = () => {
         const active = actives[Number(key)] as HTMLDivElement;
         active.innerHTML = String(array[Number(key)] + 1);
     });
+
+    td_size();
 };
 
 export default Seating;
