@@ -8,26 +8,13 @@ import create_password from "utils/password";
 import scss from "./password.module.scss";
 
 const Password: FC = () => {
-
-    const [level, setLevel] = useState(3);
-    const [password, setPassword] = useState(create_password(5, 5));
+    const [password, setPassword] = useState(create_password(6, 6));
 
     return (
         <div className="inner-medium">
             <Card className={ scss.card }>
                 <div className={ scss.form }>
-                    <label htmlFor="level">Strength</label>
-                    <div className={ scss.range }>
-                        <span>Weak</span>
-                        <input
-                            type="range" id="level" min="1" max="5"
-                            value={ level } onChange={(e) => { create(Number(e.target.value), setLevel, setPassword); }}
-                        />
-                        <span>Strong</span>
-                    </div>
-                </div>
-                <div className={ scss.form }>
-                    <button onClick={() => { create(level, setLevel, setPassword); }}><Button>ReGenerate</Button></button>
+                    <button onClick={() => { create(setPassword); }}><Button>ReGenerate</Button></button>
                     <button onClick={copy}><Button>Copy</Button></button>
                 </div>
                 <div className={ scss.form }>
@@ -42,9 +29,8 @@ const Password: FC = () => {
 
 
 
-const create = (level: number, setLevel: Dispatch<SetStateAction<number>>, setPassword: Dispatch<SetStateAction<string>>) => {
-    setLevel(level);
-    setPassword(create_password(level + 2, level + 2));
+const create = (setPassword: Dispatch<SetStateAction<string>>) => {
+    setPassword(create_password(6, 6));
 };
 
 
