@@ -14,11 +14,11 @@ const Password: FC = () => {
         <div className="inner-medium">
             <Card className={ scss.card }>
                 <div className={ scss.form }>
-                    <button onClick={() => { create(setPassword); }}><Button>ReGenerate</Button></button>
-                    <button onClick={copy}><Button>Copy</Button></button>
+                    <input type="text" id="password" value={ password } readOnly />
                 </div>
                 <div className={ scss.form }>
-                    <input type="text" id="password" value={ password } readOnly />
+                    <button onClick={() => { create(setPassword); }}><Button>ReGenerate</Button></button>
+                    <button onClick={copy}><Button>Copy</Button></button>
                 </div>
             </Card>
             <div className={ scss.copy }>Copy Success</div>
