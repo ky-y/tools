@@ -27,6 +27,8 @@ const Password: FC = () => {
     );
 };
 
+export default Password;
+
 
 const create = (setPassword: Dispatch<SetStateAction<string>>) => {
     setPassword(create_password(6, 6));
@@ -46,6 +48,3 @@ const copy = () => {
         copy.classList.remove(scss.active);
     }, 2000);
 };
-
-
-export default Password;
