@@ -7,6 +7,7 @@ import create_password from "utils/password";
 
 import scss from "./password.module.scss";
 
+
 const Password: FC = () => {
     const [password, setPassword] = useState(create_password(6, 6));
 
@@ -25,8 +26,6 @@ const Password: FC = () => {
         </div>
     );
 };
-
-
 
 
 const create = (setPassword: Dispatch<SetStateAction<string>>) => {
