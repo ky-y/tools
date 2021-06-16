@@ -41,5 +41,26 @@
                 }
             }
         }
+
+        ul {
+            display: flex;
+            list-style: none;
+
+            a {
+                display: inline-block;
+                padding: .5rem 1rem;
+                color: #1BA;
+                text-decoration: none;
+                transition: color 300ms;
+
+                &:hover {
+                    color: darken(#1BA, 7.5%);
+                }
+
+                &:active {
+                    color: darken(#1BA, 15%);
+                }
+            }
+        }
     }
 }
