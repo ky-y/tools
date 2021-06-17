@@ -15,7 +15,14 @@ const Header: FC = () => {
                     </Link>
                 </h1>
 
-                <ul>
+                <input type="checkbox" className={ scss.toggle } id="toggle" />
+                <label className={ scss.hamburger } htmlFor="toggle">
+                    <span />
+                    <span />
+                    <span />
+                </label>
+
+                <ul className={ scss.menu }>
                     <li><a href="https://kyoya0819.com/" target="_blank" rel="noopener noreferrer">HP</a></li>
                     <li><Link to="/password">PasswordMaker</Link></li>
                     <li><Link to="/seating">Seating Chart Maker</Link></li>
