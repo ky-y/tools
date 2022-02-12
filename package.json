@@ -4,6 +4,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
+        "static": "next build && next export",
         "start": "next start",
         "lint": "eslint \"./**/*.{js,ts,jsx,tsx}\"",
         "lint:fix": "eslint \"./**/*.{js,ts,jsx,tsx}\" --fix"
