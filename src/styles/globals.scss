@@ -1,0 +1,12 @@
+@import "./variables";
+
+body {
+    background: $black;
+    color: $white;
+}
+
+.inner {
+    width: 92.5%;
+    max-width: 1500px;
+    margin: 0 auto;
+}

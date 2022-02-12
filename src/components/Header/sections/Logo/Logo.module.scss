@@ -1,0 +1,21 @@
+@import "src/styles/variables";
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+
+    span {
+        display: inline-block;
+
+        &:first-of-type {
+            padding-right: .35rem;
+        }
+
+        &:last-of-type {
+            padding: 0 .35rem;
+            background: $white;
+            color: $black;
+        }
+    }
+}

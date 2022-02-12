@@ -1,122 +1,19 @@
+@import "src/styles/variables";
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 3.5rem;
-    background: #FFF;
-    box-shadow: 0 0 20px #0003;
+    height: 4rem;
+    background: $gray-700;
+    border-bottom: solid 1px $gray-600;
     z-index: 900;
 
-    & > div {
+    .inner {
         display: flex;
-        height: 100%;
         align-items: center;
-
-        h1 {
-            margin-right: auto;
-            font-size: 1.75rem;
-            line-height: 1.25;
-
-            @media screen and (max-width: 900px) {
-                font-size: 1.5rem;
-            }
-
-            a {
-                display: inline-block;
-
-                span {
-                    display: inline-block;
-                    padding: .125rem .25rem;
-                }
-
-                .kyoya0819 {
-                    background: #FFF;
-                    color: #1BA;
-                }
-
-                .tools {
-                    background: #1BA;
-                    color: #FFF;
-                }
-            }
-        }
-
-        .toggle {
-            display: none;
-
-            &:checked ~ .menu {
-                left: 0;
-            }
-        }
-
-        .hamburger {
-            display: inline-block;
-            position: relative;
-            width: 2rem;
-            height: 1.75rem;
-
-            @media screen and (min-width: 900px) {
-                display: none;
-            }
-
-            span {
-                position: absolute;
-                display: inline-block;
-                width: 100%;
-                height: 4px;
-                background: #1BA;
-
-                &:nth-of-type(1) {
-                    top: 0;
-                }
-
-                &:nth-of-type(2) {
-                    top: calc(50% - 2px);
-                }
-
-                &:nth-of-type(3) {
-                    bottom: 0;
-                }
-            }
-        }
-
-        .menu {
-            display: flex;
-            list-style: none;
-
-            @media screen and (max-width: 900px) {
-                position: fixed;
-                top: 3.5rem;
-                left: 100%;
-                width: 100%;
-                height: 100vh;
-                padding: 0 3.75%;
-                background: #FFFA;
-                display: block;
-                transition: left 1s ease-in-out;
-
-                a {
-                    width: 100%;
-                    padding: 1rem 0!important;
-                }
-            }
-
-            a {
-                display: inline-block;
-                padding: .5rem 1rem;
-                color: #1BA;
-                text-decoration: none;
-                transition: color 300ms;
-
-                &:hover {
-                    color: darken(#1BA, 7.5%);
-                }
-
-                &:active {
-                    color: darken(#1BA, 15%);
-                }
-            }
-        }
+        justify-content: space-between;
+        height: 100%;
     }
 }

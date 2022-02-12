@@ -7,7 +7,8 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "next/core-web-vitals"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -41,6 +42,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "@next/next/no-img-element": "off"
     }
 };
