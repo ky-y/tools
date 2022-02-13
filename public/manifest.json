@@ -1,0 +1,21 @@
+{
+    "name": "kyoya0819's HP",
+    "short_name": "kyoya0819's HP",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/logo192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#2f2f2f",
+    "background_color": "#2f2f2f",
+    "display": "fullscreen",
+    "orientation": "portrait"
+}

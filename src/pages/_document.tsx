@@ -3,7 +3,7 @@ import React from "react";
 
 const Document = () => {
     return (
-        <Html>
+        <Html lang="ja">
             <Head>
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&amp;display=swap" />
             </Head>
