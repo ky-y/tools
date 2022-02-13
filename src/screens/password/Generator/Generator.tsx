@@ -1,10 +1,11 @@
-import React, {Dispatch, FC, SetStateAction, useEffect, useState, useRef, MutableRefObject} from "react";
+import React, { Dispatch, FC, SetStateAction, useEffect, useState, useRef, RefObject } from "react";
 
 import Range from "components/Range/Range";
 
 import passwordGenerator from "scripts/password";
 import sliceByNumber from "scripts/sliceByNumber";
-import isiOS from "scripts/isiOS";
+
+import toggle from "images/toggle.png";
 
 import scss from "./Generator.module.scss";
 
@@ -14,15 +15,21 @@ const Generator: FC = () => {
     const [strength, setStrength] = useState<number>(41);
     const [copyClass, setCopyClass] = useState<string>("");
 
-    const textarea = useRef(null);
+    const [ellipsis, setEllipsis] = useState<boolean>(false);
+    const [fullView, setFullView] = useState<boolean>(false);
+
+    const textarea = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
 
-        if (!textarea.current) return;
+        window.addEventListener("resize", () => resize(textarea, setEllipsis));
 
-        const element = textarea.current as HTMLTextAreaElement;
-        element.style.height = "auto";
-        element.style.height = element.scrollHeight + 2 + "px";
+        return () => window.removeEventListener("resize", () => resize(textarea, setEllipsis));
+    }, []);
+
+    useEffect(() => {
+
+        resize(textarea, setEllipsis);
     }, [password]);
 
     useEffect(() => {
@@ -35,12 +42,20 @@ const Generator: FC = () => {
 
                 <div className={ scss.card }>
 
-                    <textarea
-                        id={ scss.password } ref={ textarea }
-                        onChange={ (e) => setPassword(e.target.value) }
-                        rows={ 1 }
-                        value={ password }
-                    />
+                    <div id={ scss.password } className={ (ellipsis ? scss.ellipsis : "") + " " }>
+                        <input
+                            type="checkbox" id={ scss.toggle }
+                            checked={ fullView } onChange={ (e) => setFullView(e.target.checked) }
+                        />
+                        <div
+                            className={ scss.editor } contentEditable ref={ textarea }
+                            dangerouslySetInnerHTML={{ __html: password }}
+                            onChange={ (e) => setPassword((e.target as HTMLDivElement).innerHTML) }
+                        />
+                        <label htmlFor={ scss.toggle }>
+                            <img src={ toggle.src } alt="toggle" />
+                        </label>
+                    </div>
 
                     <div className={ scss.controllers }>
                         <Range
@@ -49,10 +64,10 @@ const Generator: FC = () => {
                         />
                     </div>
 
-                    <div className={ scss.controllers }>
+                    <div className={ scss.controllers + " " + scss.flex }>
 
                         <button onClick={ () => gen(strength, setPassword) }>ReGenerate</button>
-                        <button onClick={ () => copy(password, setCopyClass, textarea) }>Copy</button>
+                        <button onClick={ () => copy(password, setCopyClass) }>Copy</button>
 
                         <div className={ scss.notify + " " + copyClass }>Copy Success</div>
                     </div>
@@ -62,6 +77,19 @@ const Generator: FC = () => {
     );
 };
 export default Generator;
+
+const resize = (ref: RefObject<HTMLDivElement>, setEllipsis: Dispatch<SetStateAction<boolean>>) => {
+    if (!ref.current) return;
+    const textarea = ref.current;
+    const textOverflow = textarea.style.textOverflow;
+    textarea.style.textOverflow = "clip";
+
+    if (textarea.clientWidth < textarea.scrollWidth)
+        setEllipsis(true);
+    else
+        setEllipsis(false);
+    textarea.style.textOverflow = textOverflow;
+};
 
 const gen = (strength: number, setPassword: Dispatch<SetStateAction<string>>) => {
     passwordGenerator(strength).then((response) => {
@@ -74,23 +102,21 @@ const gen = (strength: number, setPassword: Dispatch<SetStateAction<string>>) =>
     });
 };
 
-const copy = (password: string, setCopyClass: Dispatch<SetStateAction<string>>, textarea: MutableRefObject<null>) => {
+const copy = (password: string, setCopyClass: Dispatch<SetStateAction<string>>) => {
 
-    if (isiOS() && textarea.current) {
-        const element = textarea.current;
+    if (navigator.clipboard === undefined) {
+        const textarea = document.createElement("textarea") as HTMLTextAreaElement;
+        textarea.value = password;
+        textarea.style.position = "fixed";
+        textarea.style.left = "200vw";
+        textarea.readOnly = true;
+        document.body.appendChild(textarea);
 
-        const selected = window.getSelection();
-
-        const range = document.createRange();
-        range.selectNodeContents(element);
-
-        if (selected) {
-            selected.removeAllRanges();
-            selected.addRange(range);
-        }
-
+        textarea.select();
         // noinspection JSDeprecatedSymbols
         document.execCommand("copy");
+
+        document.body.removeChild(textarea);
 
         setCopyClass(scss.success);
 

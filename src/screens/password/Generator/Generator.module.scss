@@ -15,17 +15,76 @@
             #password {
                 display: block;
                 width: 100%;
-                font-family: "Roboto Mono", "monospace";
-                padding: .35rem .5rem;
                 border: solid 1px $gray-700;
                 border-radius: .35rem;
+                font-family: "Roboto Mono", "monospace";
+                overflow: hidden;
+
+                &:focus-within {
+                    border-color: $gray-400;
+                }
+
+                .editor {
+                    display: block;
+                    width: 100%;
+                    padding: .35rem .5rem;
+                    outline: none;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                label {
+                    display: none;
+                }
+
+                &.ellipsis {
+                    position: relative;
+
+                    .editor {
+                        padding-right: 2rem;
+                    }
+
+                    #toggle {
+                        display: none;
+
+                        &:checked ~ label img {
+                            transform: rotate(180deg);
+                        }
+
+                        &:checked ~ .editor {
+                            overflow: visible;
+                            text-overflow: clip;
+                            white-space: normal;
+                        }
+                    }
+
+                    label {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 2rem;
+                        height: 100%;
+                        flex-shrink: 0;
+
+                        img {
+                            width: 1.25rem;
+                            height: auto;
+                            transition: transform .3s;
+                        }
+                    }
+                }
             }
 
             .controllers {
                 width: 100%;
                 margin-top: 1rem;
 
-                &:nth-of-type(n+2) {
+                &.flex {
                     display: flex;
                     align-items: center;
                     justify-content: center;
