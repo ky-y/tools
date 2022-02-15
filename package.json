@@ -10,7 +10,7 @@
         "lint:fix": "eslint \"./**/*.{js,ts,jsx,tsx}\" --fix"
     },
     "dependencies": {
-        "next": "12.0.5",
+        "next": "12.0.10",
         "random-number-csprng": "^1.0.2",
         "react": "17.0.2",
         "react-dom": "17.0.2",
@@ -19,12 +19,12 @@
     "devDependencies": {
         "@types/node": "17.0.18",
         "@types/random-number-csprng": "^1.0.0",
-        "@types/react": "17.0.38",
+        "@types/react": "17.0.39",
         "@types/sass": "^1.43.1",
         "@typescript-eslint/eslint-plugin": "^5.8.1",
         "@typescript-eslint/parser": "^5.8.1",
         "eslint": "8",
         "eslint-config-next": "12.0.10",
-        "typescript": "4.5.4"
+        "typescript": "4.5.5"
     }
 }
