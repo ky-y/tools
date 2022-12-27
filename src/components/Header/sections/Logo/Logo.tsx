@@ -7,12 +7,10 @@ const Logo: FC = () => {
 
     return (
         <Link href="/">
-            <a>
-                <h1 className={ scss.logo }>
-                    <span>kyoya0819</span>
-                    <span>Tools</span>
-                </h1>
-            </a>
+            <h1 className={ scss.logo }>
+                <span>kyoya0819</span>
+                <span>Tools</span>
+            </h1>
         </Link>
     );
 };
