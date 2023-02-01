@@ -9,13 +9,13 @@
         display: inline-block;
 
         &:first-of-type {
-            padding-right: .35rem;
+            padding-right: .6rem;
         }
 
         &:last-of-type {
             padding: 0 .35rem;
-            background: $white;
             color: $black;
+            background: $white;
         }
     }
 }

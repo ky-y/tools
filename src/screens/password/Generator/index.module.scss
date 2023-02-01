@@ -8,17 +8,17 @@
         max-width: 92.5%;
 
         .card {
-            background: $gray-900;
             padding: 2rem;
+            background: $gray-900;
             border-radius: 1rem;
 
             #password {
                 display: block;
                 width: 100%;
+                overflow: hidden;
+                font-family: "Roboto Mono", "monospace";
                 border: solid 1px $gray-700;
                 border-radius: .35rem;
-                font-family: "Roboto Mono", "monospace";
-                overflow: hidden;
 
                 &:focus-within {
                     border-color: $gray-400;
@@ -28,10 +28,10 @@
                     display: block;
                     width: 100%;
                     padding: .35rem .5rem;
-                    outline: none;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
+                    outline: none;
                 }
 
                 label {
@@ -61,15 +61,15 @@
 
                     label {
                         position: absolute;
-                        right: 0;
                         top: 0;
+                        right: 0;
                         bottom: 0;
                         display: flex;
+                        flex-shrink: 0;
                         align-items: center;
                         justify-content: center;
                         width: 2rem;
                         height: 100%;
-                        flex-shrink: 0;
 
                         img {
                             width: 1.25rem;
@@ -93,21 +93,21 @@
                 button {
                     display: inline-block;
                     padding: .375rem .75rem;
+                    margin: 0 .5rem;
                     background: $gray-700;
                     border-radius: .375rem;
-                    margin: 0 .5rem;
                 }
 
                 .notify {
                     position: fixed;
                     bottom: -4rem;
                     left: 50%;
-                    background: $gray-600;
-                    color: $white;
                     padding: 1rem 2rem;
+                    color: $white;
+                    background: $gray-600;
                     border-radius: 1rem 1rem 0 0;
-                    transform: translateX(-50%);
                     transition: bottom .3s ease-in-out;
+                    transform: translateX(-50%);
 
                     &.success {
                         bottom: 0;

@@ -7,7 +7,7 @@ import sliceByNumber from "scripts/sliceByNumber";
 
 import toggle from "images/toggle.png";
 
-import scss from "./Generator.module.scss";
+import scss from "./index.module.scss";
 
 const Generator: FC = () => {
 

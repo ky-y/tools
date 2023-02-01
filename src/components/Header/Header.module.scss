@@ -4,11 +4,11 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 900;
     width: 100%;
     height: 4rem;
-    background: $gray-700;
-    border-bottom: solid 1px $gray-600;
-    z-index: 900;
+    background: $gray-900;
+    border-bottom: solid 1px $gray-800;
 
     .inner {
         display: flex;

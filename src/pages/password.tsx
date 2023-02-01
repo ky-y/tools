@@ -6,13 +6,13 @@ import Header from "components/Header/Header";
 import Main from "components/Main/Main";
 import Footer from "components/Footer/Footer";
 
-import Generator from "screens/password/Generator/Generator";
+import Generator from "screens/password/Generator";
 
 const Password: NextPage = () => {
 
     return (
         <>
-            <Head title="PasswordMaker | Tools | kyoya0819" />
+            <Head title="PasswordMaker | Tools | ky-y." />
 
             <Header />
 

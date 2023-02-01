@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import scss from "./Hero.module.scss";
+import scss from "./index.module.scss";
 
 const Hero: FC = () => {
 

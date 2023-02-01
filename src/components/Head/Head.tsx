@@ -13,12 +13,12 @@ const Head: FC<{
         <NextHead>
             <title>{ title }</title>
             <meta name="description" content="This site publishes tools created by kyoya0819." />
-            <meta property="og:url" content={`https://tools.kyoya0819.com${pathname}`} />
+            <meta property="og:url" content={`https://tools.ky-y.app${pathname}`} />
             <meta property="og:type" content={ pathname === "/" ? "website" : "article" } />
             <meta property="og:title" content={ title } />
             <meta property="og:description" content={ description ?? "This site publishes tools created by kyoya0819." } />
             <meta property="og:site_name" content="Tools | kyoya0819" />
-            <meta property="og:image" content="https://tools.kyoya0819.com/ogp.png" />
+            <meta property="og:image" content="https://tools.ky-y.app/ogp.png" />
             <link rel="icon" href="/favicon.ico" />
             <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
             <link rel="manifest" href="/manifest.json" />

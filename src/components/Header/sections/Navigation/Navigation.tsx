@@ -27,8 +27,14 @@ const Navigation: FC = () => {
 
             <ul>
                 <li><a href="https://kyoya0819.com/" target="_blank" rel="noreferrer">HP</a></li>
+                <li className={ path === "/" ? scss.current : "" }>
+                    <Link href="/">Top Page</Link>
+                </li>
                 <li className={ path === "/password" ? scss.current : "" }>
                     <Link href="/password">Password Marker</Link>
+                </li>
+                <li className={ path === "/count" ? scss.current : "" }>
+                    <Link href="/count">Character Counter</Link>
                 </li>
                 {/*
                 <li className={path === "/seating" ? scss.current : ""}>

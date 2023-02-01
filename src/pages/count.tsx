@@ -1,26 +1,27 @@
-import type { NextPage } from "next";
+import React from "react";
+import { NextPage } from "next";
 
 import Head from "components/Head/Head";
 import Header from "components/Header/Header";
 import Main from "components/Main/Main";
 import Footer from "components/Footer/Footer";
 
-import Hero from "screens/index/Hero";
+import Input from "screens/count/Input";
 
-const Home: NextPage = () => {
+const Count: NextPage = () => {
+
     return (
         <>
-            <Head title="Tools | ky-y." />
+            <Head title="Character Counter | Tools | ky-y." />
 
             <Header />
 
             <Main>
-                <Hero />
+                <Input />
             </Main>
 
             <Footer />
         </>
     );
 };
-
-export default Home;
+export default Count;
