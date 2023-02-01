@@ -31,7 +31,7 @@ const Navigation: FC = () => {
                     <Link href="/">Top Page</Link>
                 </li>
                 <li className={ path === "/password" ? scss.current : "" }>
-                    <Link href="/password">Password Marker</Link>
+                    <Link href="/password">Password Maker</Link>
                 </li>
                 <li className={ path === "/count" ? scss.current : "" }>
                     <Link href="/count">Character Counter</Link>
