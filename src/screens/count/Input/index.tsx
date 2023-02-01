@@ -77,7 +77,7 @@ const Input: FC = () => {
                                     [...text].length
                                     - [...removeReturn(text)].length
                                     - (text.match(/\r\n/g) || []).length
-                                    + 1
+                                    + (text === "" ? 0 : 1)
                                 }</div>
                             </li>
                         </ul>
