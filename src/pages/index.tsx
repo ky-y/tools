@@ -5,7 +5,7 @@ import Header from "components/Header/Header";
 import Main from "components/Main/Main";
 import Footer from "components/Footer/Footer";
 
-import Hero from "screens/index/Hero";
+import Hero from "sections/index/Hero";
 
 const Home: NextPage = () => {
     return (

@@ -6,7 +6,7 @@ import Header from "components/Header/Header";
 import Main from "components/Main/Main";
 import Footer from "components/Footer/Footer";
 
-import Generator from "screens/password/Generator";
+import Generator from "sections/password/Generator";
 
 const Password: NextPage = () => {
 

@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC} from "react";
+import React, { ChangeEvent, FC } from "react";
 
 import scss from "./Range.module.scss";
 
