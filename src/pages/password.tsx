@@ -12,7 +12,7 @@ const Password: NextPage = () => {
 
     return (
         <>
-            <Head title="PasswordMaker | Tools | ky-y." />
+            <Head title="Password Maker | Tools | ky-y." />
 
             <Header />
 
