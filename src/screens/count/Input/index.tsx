@@ -78,10 +78,9 @@ const Input: FC = () => {
 
                 <div className={ scss.card }>
                     <Textarea
-                        minRows={ 3 }
+                        minRows={ 3 } maxRows={ 20 }
                         placeholder="文字数をカウントしたい文章を入力してください。"
                         onChange={ e => {
-
                             setText(e.target.value);
                             window.localStorage.setItem("text", e.target.value);
                         } }
