@@ -1,6 +1,6 @@
-import Cookie from "js-cookie";
 import React, { FC, useEffect, useState } from "react";
 import Textarea from "react-textarea-autosize";
+import useInterval from "use-interval";
 
 import removeReturn from "./scripts/removeReturn";
 
@@ -8,25 +8,69 @@ import scss from "./index.module.scss";
 
 const Input: FC = () => {
 
+    // Intl.Segmenter
+    const [segmenter, setSegmenter] = useState<Intl.Segmenter | undefined>(undefined);
+
+    // 入力値
     const [text, setText] = useState<string>("");
-    const [segmenter, setSegmenter] = useState<Intl.Segmenter>();
+
+    // 改行削除済み入力値
+    const [textDelReturn, setTextDelReturn] = useState<string>("");
+
+    // 文字数（軽量版）
+    const [textCount, setTextCount] = useState<number>(0);
+
+    // 文字数（Intl.Segmenter版）
+    const [segmentCount, setSegmentCount] = useState<number>(0);
+
+    // 読み上げ目安秒数
+    const [second, setSecond] = useState<number>(0);
+
+    // 軽量化スクリプト
+    const [interval, setInterval] = useState<number | null>(null);
+
+    useInterval(() => {
+
+        if (segmenter)
+            setSegmentCount([...segmenter.segment(text)].length);
+
+        setTextCount([...textDelReturn].length);
+    }, interval);
 
     useEffect(() => {
 
+        setText(window.localStorage.getItem("text") ?? "");
+
         if (Intl.Segmenter)
             setSegmenter(new Intl.Segmenter("ja", { granularity: "grapheme" }));
-
-        const past_text = Cookie.get("text");
-        if (past_text)
-            setText(past_text);
     }, []);
 
     useEffect(() => {
 
-        Cookie.set("text", text, {
-            secure: true
-        });
-    }, [text]);
+        const textDelReturn = removeReturn(text);
+        setTextDelReturn(textDelReturn);
+
+        const lightCount = [...textDelReturn].length;
+
+        setTextCount(lightCount);
+
+        if (10000 < lightCount)
+            setInterval(null);
+
+        else if (2000 < lightCount)
+            setInterval(1000);
+
+        else {
+            setInterval(null);
+
+            if (segmenter)
+                setSegmentCount([...segmenter.segment(text)].length);
+        }
+
+        // 1分間に300文字がプレゼンにいいらしい。
+        setSecond(Math.ceil(lightCount / 300 * 60));
+
+    }, [segmenter, text]);
 
     return (
         <section className={ scss.input }>
@@ -36,7 +80,11 @@ const Input: FC = () => {
                     <Textarea
                         minRows={ 3 }
                         placeholder="文字数をカウントしたい文章を入力してください。"
-                        onChange={ e => setText(e.target.value) }
+                        onChange={ e => {
+
+                            setText(e.target.value);
+                            window.localStorage.setItem("text", e.target.value);
+                        } }
                         value={ text }
                     />
 
@@ -44,23 +92,25 @@ const Input: FC = () => {
 
                         <div className={ scss.default }>
                             <div className={ scss.title }>文字数</div>
-                            <div className={ scss.count }>{ [...removeReturn(text)].length }</div>
+                            <div className={ scss.count }>{ [...textDelReturn].length }</div>
                         </div>
 
                         <ul className={ scss.others }>
                             <li>
                                 <div className={ scss.title }>Intl.Segmenter</div>
                                 <div className={ scss.count }>{
-                                    segmenter
-                                        ? [...segmenter.segment(removeReturn(text))].length
-                                        : "Not Support"
+                                    10000 < textCount
+                                        ? "Not Support"
+                                        : segmenter
+                                            ? segmentCount
+                                            : "Not Support"
                                 }</div>
                             </li>
                             <li>
                                 <div className={ scss.title }>文字数（空白なし）</div>
                                 <div className={ scss.count }>{
                                     [
-                                        ...removeReturn(text)
+                                        ...textDelReturn
                                             .replace(/\s/g, "")
                                     ].length
                                 }</div>
@@ -68,7 +118,7 @@ const Input: FC = () => {
                             <li>
                                 <div className={ scss.title }>バイト数（UTF-8）</div>
                                 <div className={ scss.count }>{
-                                    encodeURI(removeReturn(text)).replace(/%../g, "*").length
+                                    encodeURI(textDelReturn).replace(/%../g, "*").length
                                 }</div>
                             </li>
                             <li>
@@ -79,6 +129,24 @@ const Input: FC = () => {
                                     - (text.match(/\r\n/g) || []).length
                                     + (text === "" ? 0 : 1)
                                 }</div>
+                            </li>
+                            <li>
+                                <div className={ scss.title }>読む目安</div>
+                                <div className={ scss.count }>
+                                    {
+                                        3600 > second
+                                            ? ""
+                                            : Math.floor(second / 3600) + "h "
+                                    }
+                                    {
+                                        60 > second
+                                            ? ""
+                                            : Math.floor(second % 3600 / 60) + "m "
+                                    }
+                                    {
+                                        second % 60 + "s"
+                                    }
+                                </div>
                             </li>
                         </ul>
                     </div>
