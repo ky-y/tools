@@ -32,7 +32,7 @@ const Input: FC = () => {
     useInterval(() => {
 
         if (segmenter)
-            setSegmentCount([...segmenter.segment(text)].length);
+            setSegmentCount([...segmenter.segment(textDelReturn)].length);
 
         setTextCount([...textDelReturn].length);
     }, interval);
@@ -64,7 +64,7 @@ const Input: FC = () => {
             setInterval(null);
 
             if (segmenter)
-                setSegmentCount([...segmenter.segment(text)].length);
+                setSegmentCount([...segmenter.segment(textDelReturn)].length);
         }
 
         // 1分間に300文字がプレゼンにいいらしい。
