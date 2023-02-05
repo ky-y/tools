@@ -23,7 +23,7 @@
         "use-interval": "^1.4.0"
     },
     "devDependencies": {
-        "@types/node": "18.11.18",
+        "@types/node": "18.11.19",
         "@types/random-number-csprng": "^1.0.0",
         "@types/react": "18.0.27",
         "@types/sass": "^1.43.1",
