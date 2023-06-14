@@ -19,7 +19,7 @@
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "react-textarea-autosize": "^8.4.1",
-        "sass": "^1.59.3",
+        "sass": "^1.63.4",
         "use-interval": "^1.4.0"
     },
     "devDependencies": {
