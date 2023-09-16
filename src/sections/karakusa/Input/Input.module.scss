@@ -1,0 +1,29 @@
+@import "src/styles/variables";
+
+.Input {
+    padding: 3rem 0;
+
+    .card {
+        padding: 2rem;
+        background: $gray-900;
+        border-radius: 1rem;
+
+        .names {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-right: -1rem;
+
+            input, button {
+                padding: .5rem 1rem;
+                background: $gray-700;
+                border-radius: .375rem;
+                margin: 0 1rem 1rem 0;
+            }
+        }
+    }
+
+    .export {
+        margin-top: 3rem;
+    }
+}
