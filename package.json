@@ -14,27 +14,28 @@
         "stylelint:fix": "stylelint \"**/*.{css,scss,sass}\" --fix"
     },
     "dependencies": {
-        "next": "13.2.4",
+        "next": "13.4.19",
         "random-number-csprng": "^1.0.2",
         "react": "18.2.0",
         "react-dom": "18.2.0",
-        "react-textarea-autosize": "^8.4.1",
-        "sass": "^1.59.3",
-        "use-interval": "^1.4.0"
+        "react-textarea-autosize": "^8.5.3",
+        "sass": "^1.67.0",
+        "use-interval": "^1.4.0",
+        "uuidv4": "^6.2.13"
     },
     "devDependencies": {
-        "@types/node": "18.15.11",
+        "@types/node": "20.6.2",
         "@types/random-number-csprng": "^1.0.0",
-        "@types/react": "18.0.30",
+        "@types/react": "18.2.21",
         "@types/sass": "^1.45.0",
-        "@typescript-eslint/eslint-plugin": "^5.55.0",
-        "@typescript-eslint/parser": "^5.55.0",
-        "eslint": "8.36.0",
-        "eslint-config-next": "13.2.4",
-        "postcss-scss": "^4.0.6",
-        "stylelint": "^15.3.0",
-        "stylelint-config-recess-order": "^4.0.0",
-        "stylelint-scss": "^4.5.0",
-        "typescript": "5.0.2"
+        "@typescript-eslint/eslint-plugin": "^6.7.0",
+        "@typescript-eslint/parser": "^6.7.0",
+        "eslint": "8.49.0",
+        "eslint-config-next": "13.4.19",
+        "postcss-scss": "^4.0.8",
+        "stylelint": "^15.10.3",
+        "stylelint-config-recess-order": "^4.3.0",
+        "stylelint-scss": "^5.2.1",
+        "typescript": "5.2.2"
     }
 }
