@@ -12,13 +12,13 @@ body {
 input, button, textarea {
     font: inherit;
     color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: transparent;
     border: none;
     border-radius: 0;
     outline: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 textarea {
