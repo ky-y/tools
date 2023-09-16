@@ -36,11 +36,9 @@ const Navigation: FC = () => {
                 <li className={ path === "/count" ? scss.current : "" }>
                     <Link href="/count">Character Counter</Link>
                 </li>
-                {/*
-                <li className={path === "/seating" ? scss.current : ""}>
-                    <Link href="/seating">Seating Chart Maker</Link>
+                <li className={path === "/karakasa" ? scss.current : ""}>
+                    <Link href="/karakasa">傘連判状</Link>
                 </li>
-                */}
             </ul>
         </nav>
     );
