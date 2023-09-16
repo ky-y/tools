@@ -33,10 +33,10 @@
             &::-webkit-slider-thumb {
                 width: 1.4rem;
                 height: 1.4rem;
+                -webkit-appearance: none;
                 background: $gray-300;
                 border-radius: 50%;
                 box-shadow: none;
-                -webkit-appearance: none;
             }
 
             &::-moz-range-thumb {

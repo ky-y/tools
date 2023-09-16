@@ -1,4 +1,4 @@
-import randomNumber from "random-number-csprng";
+import { randomNumber } from "./randomNumber";
 
 const characters = (): string => {
     let words = "";
@@ -11,17 +11,10 @@ const characters = (): string => {
     return words;
 };
 
-const random_string = (): Promise<string> => {
+const random_string = async (): Promise<string> => {
 
-    return new Promise((resolve, reject) => {
-        randomNumber(0, characters().length -1)
-            .then((res) => {
-                return resolve(characters().charAt(res));
-            })
-            .catch((res) => {
-                return reject(res);
-            });
-    });
+    const i = await randomNumber(0, characters().length -1);
+    return characters().charAt(i);
 };
 
 const random_strings = (length: number): Promise<Awaited<string[]>> => {
