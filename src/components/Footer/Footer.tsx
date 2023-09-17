@@ -7,7 +7,7 @@ const Footer: FC = () => {
     return (
         <footer className={ scss.footer }>
             <div className="inner">
-                (C) <a href="https://kyoya0819.com/" target="_blank" rel="noreferrer">kyoya0819</a> 2022
+                (C) <a href="https://ky-y.dev/" target="_blank" rel="noreferrer">ky-y.</a> 2023
             </div>
         </footer>
     );
