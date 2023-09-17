@@ -1,0 +1,74 @@
+@import "src/styles/variables";
+
+.hex {
+    padding: 3rem 0;
+
+    [class="inner"] {
+        max-width: 500px;
+
+        .card {
+            padding: 2rem;
+            background: $gray-900;
+            border-radius: 1rem;
+
+            .form {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .input {
+                    position: relative;
+                    font-family: "Roboto Mono", "monospace";
+
+                    span {
+                        position: absolute;
+                    }
+
+                    input {
+                        width: 4.75rem;
+                        padding-left: 0.75rem;
+                        text-align: center;
+                    }
+                }
+
+                .plus {
+                    position: relative;
+                    width: 1rem;
+                    height: 1rem;
+                    margin: 0 1rem;
+
+                    &::before, &::after {
+                        position: absolute;
+                        content: "";
+                        background: #FFF;
+                    }
+
+                    &::before {
+                        top: 0;
+                        left: calc((1rem / 2) - (2px / 2));
+                        width: 2px;
+                        height: 1rem;
+                    }
+
+                    &::after {
+                        top: calc((1rem / 2) - (2px / 2));
+                        left: 0;
+                        width: 1rem;
+                        height: 2px;
+                    }
+                }
+            }
+
+            .result {
+                font-family: "Roboto Mono", "monospace";
+                font-size: 1.5rem;
+                text-align: center;
+
+                &.disable {
+                    color: #999;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}
