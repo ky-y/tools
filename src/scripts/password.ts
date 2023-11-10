@@ -11,17 +11,17 @@ const characters = (): string => {
     return words;
 };
 
-const random_string = async (): Promise<string> => {
+const random_string = (): string => {
 
-    const i = await randomNumber(0, characters().length -1);
+    const i = randomNumber(0, characters().length -1);
     return characters().charAt(i);
 };
 
-const random_strings = (length: number): Promise<Awaited<string[]>> => {
+const random_strings = (length: number): string[] => {
 
-    return Promise.all([...Array(length)].map(() => {
+    return [...Array(length)].map(() => {
 
         return random_string();
-    }));
+    });
 };
 export default random_strings;

@@ -92,14 +92,14 @@ const resize = (ref: RefObject<HTMLDivElement>, setEllipsis: Dispatch<SetStateAc
 };
 
 const gen = (strength: number, setPassword: Dispatch<SetStateAction<string>>) => {
-    passwordGenerator(strength).then((response) => {
-
-        setPassword(
-            sliceByNumber(response, 6).map((password) => {
-                return password.join("");
-            }).join("-")
-        );
-    });
+    setPassword(
+        sliceByNumber(
+            passwordGenerator(strength),
+            6
+        ).map((password) => {
+            return password.join("");
+        }).join("-")
+    );
 };
 
 const copy = (password: string, setCopyClass: Dispatch<SetStateAction<string>>) => {

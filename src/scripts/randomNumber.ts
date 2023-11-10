@@ -1,14 +1,4 @@
-import csprng from "random-number-csprng";
+export const randomNumber = (min: number, max: number): number => {
 
-export const randomNumber = (min: number, max: number): Promise<number> => {
-
-    return new Promise((resolve, reject) => {
-        csprng(min, max)
-            .then((res) => {
-                return resolve(res);
-            })
-            .catch((res) => {
-                return reject(res);
-            });
-    });
+    return self.crypto.getRandomValues(new Uint32Array(1))[0] % (max - min) + min;
 };
