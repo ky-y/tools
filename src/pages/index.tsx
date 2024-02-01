@@ -1,5 +1,6 @@
 import { A, Card, Footer, Main, Section } from "@ky-y./ui";
 import type { NextPage } from "next";
+import Head from "next/head";
 
 import Header from "components/Header";
 
@@ -7,6 +8,9 @@ const Index: NextPage = () => {
 
     return (
         <>
+            <Head>
+                <title>Top | kyTools</title>
+            </Head>
             <Header />
             <Main>
                 <Section inner="md">
