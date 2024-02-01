@@ -1,9 +1,9 @@
 import { Button, Card, Range, Section, Textarea } from "@ky-y./ui";
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import { Roboto_Mono } from "next/font/google";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 
-import { sliceByNumber } from "./scripts/sliceByNumber";
 import { randomStrings } from "./scripts/password";
+import { sliceByNumber } from "./scripts/sliceByNumber";
 
 const inter = Roboto_Mono({ subsets: ["latin"] });
 

@@ -1,11 +1,9 @@
 {
-    "name": "next-template",
+    "name": "@ky-y./kytools",
     "private": true,
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start",
-        "static": "next build && next export",
         "lint": "yarn eslint && yarn stylelint",
         "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
         "eslint": "eslint \"./**/*.{js,ts,jsx,tsx}\"",
