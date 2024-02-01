@@ -8,6 +8,9 @@ on:
 
     workflow_dispatch:
 
+env:
+    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
     setup:
         runs-on: ubuntu-latest
@@ -29,8 +32,6 @@ jobs:
             - name: Install Dependencies
               if: steps.yarn_cache.outputs.cache-hit != 'true'
               run: yarn install
-              env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
     eslint:
