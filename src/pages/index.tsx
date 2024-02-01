@@ -1,26 +1,24 @@
+import { A, Card, Footer, Main, Section } from "@ky-y./ui";
 import type { NextPage } from "next";
 
-import Head from "components/Head/Head";
-import Header from "components/Header/Header";
-import Main from "components/Main/Main";
-import Footer from "components/Footer/Footer";
+import Header from "components/Header";
 
-import Hero from "sections/index/Hero";
+const Index: NextPage = () => {
 
-const Home: NextPage = () => {
     return (
         <>
-            <Head title="Tools | ky-y." />
-
             <Header />
-
             <Main>
-                <Hero />
+                <Section inner="md">
+                    <Card>
+                        主に自分用のツールを置いています。<br />
+                        生成結果に関しては制限なくご自由にお使いいただけます。<br />
+                        不明点, 機能要望, バグ報告等ありましたら、<A href="https://github.com/ky-y/tools/issues" target="_blank">GitHubのIssues</A>か、kyoya0819@gmail.comまでご連絡いただけますと幸いです。
+                    </Card>
+                </Section>
             </Main>
-
             <Footer />
         </>
     );
 };
-
-export default Home;
+export default Index;

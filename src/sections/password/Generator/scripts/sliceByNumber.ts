@@ -1,4 +1,4 @@
-const sliceByNumber = <T>(array: T[], number: number): T[][] => {
+export const sliceByNumber = <T>(array: T[], number: number): T[][] => {
 
     const count = Math.ceil(array.length / number);
 
@@ -10,4 +10,3 @@ const sliceByNumber = <T>(array: T[], number: number): T[][] => {
         });
     });
 };
-export default sliceByNumber;

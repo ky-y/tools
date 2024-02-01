@@ -1,27 +1,21 @@
-import React from "react";
-import { NextPage } from "next";
+import { Footer, Main } from "@ky-y./ui";
+import type { NextPage } from "next";
 
-import Head from "components/Head/Head";
-import Header from "components/Header/Header";
-import Main from "components/Main/Main";
-import Footer from "components/Footer/Footer";
+import { Header } from "components/Header/Header";
 
-import Generator from "sections/password/Generator";
+import { Generator } from "sections/password";
 
 const Password: NextPage = () => {
 
     return (
         <>
-            <Head title="Password Maker | Tools | ky-y." />
-
             <Header />
-
             <Main>
                 <Generator />
             </Main>
-
-            <Footer />
+            <Footer/>
         </>
     );
 };
+
 export default Password;

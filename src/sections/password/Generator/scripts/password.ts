@@ -11,17 +11,16 @@ const characters = (): string => {
     return words;
 };
 
-const random_string = (): string => {
+const randomString = (): string => {
 
     const i = randomNumber(0, characters().length -1);
     return characters().charAt(i);
 };
 
-const random_strings = (length: number): string[] => {
+export const randomStrings = (length: number): string[] => {
 
     return [...Array(length)].map(() => {
 
-        return random_string();
+        return randomString();
     });
 };
-export default random_strings;

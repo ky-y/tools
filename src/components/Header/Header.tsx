@@ -1,20 +1,25 @@
-import React, { FC } from "react";
+import { A, Header as HeaderC } from "@ky-y./ui";
+import Link from "next/link";
+import React from "react";
 
-import scss from "./Header.module.scss";
+import logo from "assets/logo.webp";
 
-import Logo from "./sections/Logo/Logo";
-import Navigation from "./sections/Navigation/Navigation";
-
-const Header: FC = () => {
-
+export const Header = () => {
+    
     return (
-        <header className={ scss.header }>
-            <div className={"inner " + scss.inner}>
-
-                <Logo />
-                <Navigation />
-            </div>
-        </header>
+        <HeaderC
+            title="kyTools"
+            logo={ logo }
+        >
+            <A href="https://ky-y.dev" target="_blank">
+                ky-y.
+            </A>
+            <Link href="/">
+                TOP
+            </Link>
+            <Link href="/password">
+                Password Maker
+            </Link>
+        </HeaderC>
     );
 };
-export default Header;

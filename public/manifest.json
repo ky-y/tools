@@ -1,6 +1,6 @@
 {
-    "name": "kyoya0819's HP",
-    "short_name": "kyoya0819's HP",
+    "name": "kyTools",
+    "short_name": "kyTools",
     "start_url": "/",
     "icons": [
         {
@@ -14,8 +14,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#2f2f2f",
-    "background_color": "#2f2f2f",
+    "theme_color": "#111111",
+    "background_color": "#111111",
     "display": "fullscreen",
     "orientation": "portrait"
 }
