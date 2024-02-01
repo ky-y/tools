@@ -94,4 +94,4 @@ jobs:
                   key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
             - name: Build Check
-              run: yarn static
+              run: yarn build
