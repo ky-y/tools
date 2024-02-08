@@ -42,7 +42,7 @@ export const Generator: FC = () => {
                     marginBottom: "2rem"
                 }}>
                     <Button
-                        color="neutral" style={{ marginRight: "2rem", userSelect: "none" }}
+                        color="neutral" style={{ marginRight: "1.5rem", userSelect: "none" }}
                         onClick={() => gen(strength, setPassword)}
                     >
                         ReGenerate
