@@ -169,7 +169,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ky-y./kytools@workspace:."
   dependencies:
-    "@ky-y./ui": "npm:^1.0.61"
+    "@ky-y./ui": "npm:^1.0.68"
     "@types/node": "npm:^20.11.15"
     "@types/react": "npm:^18.2.51"
     "@types/uuid": "npm:^9.0.7"
@@ -196,15 +196,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ky-y./ui@npm:^1.0.61":
-  version: 1.0.61
-  resolution: "@ky-y./ui@npm:1.0.61"
+"@ky-y./ui@npm:^1.0.68":
+  version: 1.0.68
+  resolution: "@ky-y./ui@npm:1.0.68"
   dependencies:
     react: "npm:^18.2.0"
     react-icons: "npm:^5.0.1"
     react-textarea-autosize: "npm:^8.5.3"
     uuid: "npm:^9.0.1"
-  checksum: 10c0/93010df1196f2c6680a62cf5de1d74d7db889e80913b7470b03c76726858f18b51892064eba9df97a6d0a5ffcc79b3c2f038d1640fc86ae6da6889228865b0e8
+  checksum: 10c0/6b11da751201233d0989ecb7ac449ed2fe709dcd636596786e044e370fb8cca430bc3a9f54567673409b9714b970c1e245578b170673e0f8cf768c5da77fb783
   languageName: node
   linkType: hard
 
