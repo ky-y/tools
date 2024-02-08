@@ -23,7 +23,7 @@ export const Generator: FC = () => {
                 <div style={{
                     display: "flex",
                     alignItems: "center",
-                    marginBottom: "1rem"
+                    marginBottom: "2rem"
                 }}>
                     <div style={{ color: "#555", fontSize: "0.75rem", marginRight: "1rem", userSelect: "none" }}>Weak</div>
                     <Range
@@ -39,7 +39,7 @@ export const Generator: FC = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    marginBottom: "1rem"
+                    marginBottom: "2rem"
                 }}>
                     <Button
                         color="neutral" style={{ marginRight: "2rem", userSelect: "none" }}
